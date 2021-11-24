@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import Square from "./Components/Square";
 import { Patterns } from "./Patterns";
+import swal from 'sweetalert';
 
 function App() {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -21,7 +22,7 @@ function App() {
 
   useEffect(() => {
     if (result.state != "none") {
-      alert(`Game Finished! Winning Player: ${result.winner}`);
+      swal(`Game Finished! Winning Player: ${result.winner}`);
       restartGame();
     }
   }, [result]);
@@ -77,7 +78,7 @@ function App() {
     <div className="App">
       <div className="heading">
           <h1>Tic-Tac-Toe</h1>
-          Made by Vaibhav Goel
+          Made by Vaibhav Goel 
       </div>
       <div className="board">
         <div className="row">
